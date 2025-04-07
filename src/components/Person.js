@@ -1,8 +1,8 @@
 import './Person.css';
 
-function Person({ person }) {
+function Person({ person, onSelect }) {
     return (
-        <div className="Person">
+        <div className="Person" onClick={() => onSelect(person)}>
             <div className="Person-image">
                 <img
                     alt={`${person.name.title} ${person.name.first}`}
@@ -10,7 +10,7 @@ function Person({ person }) {
                 />
             </div>
             <div className="Person-name">
-                {person.name.title} {person.name.first}
+                {person.name.title} {person.name.first} {person.name.last}
             </div>
             <div className="Person-location">
                 {person.location.city} <br /> {person.location.state}
